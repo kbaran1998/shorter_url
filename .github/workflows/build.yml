@@ -1,4 +1,4 @@
-name: Shortner CI
+name: Building
 
 on:
   push:
