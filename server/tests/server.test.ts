@@ -1,13 +1,11 @@
-import express from "express";
 import request from "supertest";
-import serverRoutes from "../src/server";
+import {serverRoutes, server} from "../src/server";
 
-const app = express();
+server.use("/", serverRoutes);
 
-app.use("/", serverRoutes);
 describe("Test server", () => {
   it("GET / - success", async () => {
-    const { body } = await request(app).get("/");
-    expect(body).toBe("The sedulous hyena ate the antelope!");
+    const { body } = await request(server).get("/");
+    expect(body.msg).toBe("The sedulous hyena ate the antelope!");
   });
 });
