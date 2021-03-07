@@ -34,6 +34,6 @@ jobs:
     - name: Run clean install
       run: yarn ci --prefix ./client
     - name: Test React application
-      run: yarn test --prefix ./client
+      run: yarn run test --prefix ./client
     - name: Build the React application
-      run: yarn build --prefix ./client
+      run: yarn run build --prefix ./client
