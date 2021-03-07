@@ -32,8 +32,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run clean install
-      run: npm ci --prefix ./client
+      run: yarn ci --prefix ./client
     - name: Test React application
-      run: npm run test --prefix ./client
+      run: yarn test --prefix ./client
     - name: Build the React application
-      run: npm run build --prefix ./client
+      run: yarn build --prefix ./client
