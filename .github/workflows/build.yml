@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build_node:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,5 +21,19 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Run clean install
       run: npm ci --prefix ./server
+    - name: Test Node application
+      run: npm run test --prefix ./server
     - name: Build the node application
       run: npm run build --prefix ./server --if-present
+    
+  
+  build_react:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run clean install
+      run: npm ci --prefix ./client
+    - name: Test React application
+      run: npm run test --prefix ./client
+    - name: Build the React application
+      run: npm run build --prefix ./client

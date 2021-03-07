@@ -5,6 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "tsc && node dist/server.js",
+    "build": "tsc",
     "test": "jest --no-cache  --detectOpenHandles --runInBand --forceExit"
   },
   "repository": {
